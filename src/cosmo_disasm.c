@@ -517,6 +517,10 @@ CosmoArch cosmo_detect_arch_ape(const uint8_t *data, size_t size)
  * Version Information
  * ============================================================================ */
 
+/* Helper for stringifying version numbers */
+#define COSMO_DISASM_STR2(x) #x
+#define COSMO_DISASM_STR(x) COSMO_DISASM_STR2(x)
+
 const char *cosmo_disasm_version(void)
 {
     return "cosmo-disasm " 
@@ -524,7 +528,3 @@ const char *cosmo_disasm_version(void)
            COSMO_DISASM_STR(COSMO_DISASM_VERSION_MINOR) "."
            COSMO_DISASM_STR(COSMO_DISASM_VERSION_PATCH);
 }
-
-/* Helper for stringifying version numbers */
-#define COSMO_DISASM_STR(x) COSMO_DISASM_STR2(x)
-#define COSMO_DISASM_STR2(x) #x
